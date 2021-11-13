@@ -72,6 +72,7 @@
         [[NSApplication sharedApplication] terminate:self];
     }
     NSBitmapImageRep *bitmapRep = [[NSBitmapImageRep alloc] initWithCGImage:windowImage];
+    CGImageRelease(windowImage);
     NSImage *image = [[NSImage alloc] init];
     [image addRepresentation:bitmapRep];
     [self.imageView setImage:image];
